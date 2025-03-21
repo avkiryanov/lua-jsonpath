@@ -288,7 +288,7 @@ local function eval_ast(ast, obj)
         if obj == nil then
             return nil, 'object is not set'
         end
-        for i = 2, #expr, 2 do  -- [1] is "var"
+        for i = 2, #expr, 1 do  -- [1] is "var"
             local member, err = eval_ast(expr[i], obj)
             if member == nil then
                 return nil, err
